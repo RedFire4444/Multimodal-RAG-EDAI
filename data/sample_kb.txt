@@ -1,0 +1,12 @@
+# Artificial Intelligence and Retrieval-Augmented Generation (RAG)
+
+Retrieval-Augmented Generation (RAG) is an AI architecture that enhances large language models (LLMs) by retrieving relevant information from an external knowledge base before generating a response.
+
+## Core Components of Hybrid RAG
+1. Dense Retrieval: Uses dense embedding models such as sentence-transformers/all-minilm-l6-v2 to perform semantic vector search in a vector database like Qdrant.
+2. Sparse Retrieval: Uses BM25 to find exact keyword matches, proper names, and domain-specific terminology.
+3. Rank Fusion: Combines dense semantic rankings and sparse lexical rankings using Reciprocal Rank Fusion (RRF).
+4. Cross-Encoder Reranking: Uses cross-encoders such as BAAI/bge-reranker-v2-m3 to score query-document pairs simultaneously for maximum precision.
+
+## Multi-Hop Question Answering
+Multi-hop reasoning requires synthesizing facts from two or more distinct passages to answer a single question. For example, determining who the founder of an organization is and what year their birthplace was established.
