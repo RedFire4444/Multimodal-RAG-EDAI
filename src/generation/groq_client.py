@@ -1,5 +1,10 @@
 import os
+import logging
 from typing import List, Dict, Any, Optional
+
+logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("httpcore").setLevel(logging.WARNING)
+logging.getLogger("groq").setLevel(logging.WARNING)
 
 
 class GroqLLMClient:

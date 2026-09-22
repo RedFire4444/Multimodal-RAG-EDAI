@@ -8,6 +8,13 @@ from rich.table import Table
 from rich.panel import Panel
 from rich.markdown import Markdown
 
+import logging
+
+# Suppress verbose third-party logging (httpx HTTP request logs, etc.)
+logging.basicConfig(level=logging.WARNING)
+for _logger_name in ("httpx", "httpcore", "groq", "flashrank", "sentence_transformers", "qdrant_client", "urllib3"):
+    logging.getLogger(_logger_name).setLevel(logging.WARNING)
+
 # Safe UTF-8 configuration for Windows consoles
 if sys.platform == "win32":
     try:

@@ -1,7 +1,10 @@
 from typing import List, Optional, Dict, Any
 import os
 import math
+import logging
 from ..rag.schemas import RetrievedChunk
+
+logging.getLogger("flashrank").setLevel(logging.WARNING)
 
 
 class FlashRankReranker:
